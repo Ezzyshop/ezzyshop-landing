@@ -29,17 +29,41 @@ export default function Nav({ lang: initialLang }: Props) {
       <div className="nav-inner">
         <a href="/" style={{ display: "flex", alignItems: "center" }}>
           {scrolled ? (
-            <img
-              src="/logo-light.png"
-              alt="Ezzyshop"
-              style={{ height: "34px", width: "auto" }}
-            />
+            <>
+              <img
+                src="/logo-light.png"
+                alt="Ezzyshop"
+                style={{ height: "34px", maxWidth: "200px", width: "auto" }}
+                width={200}
+                height={34}
+                className="hidden md:block"
+              />
+              <img
+                src="/favicon.png"
+                alt="Ezzyshop"
+                width={42}
+                height={42}
+                className="block md:hidden"
+              />
+            </>
           ) : (
-            <img
-              src="/logo-dark.png"
-              alt="Ezzyshop"
-              style={{ height: "34px", width: "auto" }}
-            />
+            <>
+              <img
+                src="/logo-dark.png"
+                alt="Ezzyshop"
+                style={{ height: "34px", maxWidth: "200px", width: "auto" }}
+                width={200}
+                height={34}
+                className="hidden md:block"
+              />
+              <img
+                src="/favicon.png"
+                alt="Ezzyshop"
+                width={42}
+                height={42}
+                className="block md:hidden"
+              />
+            </>
           )}
         </a>
 
@@ -71,7 +95,7 @@ export default function Nav({ lang: initialLang }: Props) {
             ))}
           </div>
           <a
-            href="https://b2b.ezzyshop.uz"
+            href="https://app.ezzyshop.uz"
             target="_blank"
             className="btn btn-ghost btn-sm"
           >

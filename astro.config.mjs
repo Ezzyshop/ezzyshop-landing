@@ -1,11 +1,15 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [react()],
   i18n: {
-    defaultLocale: 'uz',
-    locales: ['uz', 'ru', 'en'],
+    defaultLocale: "uz",
+    locales: ["uz", "ru", "en"],
     routing: {
       prefixDefaultLocale: false,
     },
