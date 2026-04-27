@@ -1,0 +1,24 @@
+---
+import { T, type Lang } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = T[lang];
+---
+
+<section class="section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>{t.cta_title}</h2>
+      <p>{t.cta_sub}</p>
+      <div class="cta-btns">
+        <a href="/signup" class="btn btn-primary" style="font-size:16px;padding:15px 32px;">
+          {t.cta1b}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/demo" class="btn btn-ghost">{t.cta2b}</a>
+      </div>
+    </div>
+  </div>
+</section>

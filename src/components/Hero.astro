@@ -1,0 +1,176 @@
+---
+import { T, type Lang } from '../i18n/translations';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = T[lang];
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <!-- Text side -->
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>{t.hero_badge}</span>
+      </div>
+
+      <h1>
+        {t.hero_h1_1}<br />
+        <em>{t.hero_h1_2}</em><br />
+        {t.hero_h1_3}
+      </h1>
+
+      <p class="hero-sub">{t.hero_sub}</p>
+
+      <div class="hero-ctas">
+        <a href="/signup" class="btn btn-primary">
+          {t.cta1}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/demo" class="btn btn-ghost">{t.cta2}</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-avatars">
+          {["AT","SF","MR","DK","BN"].map((a) => (
+            <div class="hero-avatar">{a}</div>
+          ))}
+        </div>
+        <p class="hero-trust-text"><strong>500+</strong> {t.trust}</p>
+      </div>
+    </div>
+
+    <!-- Visual side -->
+    <div class="hero-visual">
+      <!-- Dashboard mockup -->
+      <div class="dashboard">
+        <div class="db-topbar">
+          <div class="db-dot" style="background:#ff5f57"></div>
+          <div class="db-dot" style="background:#ffbd2e"></div>
+          <div class="db-dot" style="background:#28c840"></div>
+          <div style="flex:1"></div>
+          <div style="background:rgba(255,255,255,0.07);border-radius:4px;padding:2px 10px;font-size:10px;color:rgba(255,255,255,0.4)">dashboard.ezzyshop.uz</div>
+        </div>
+        <div class="db-body">
+          <div class="db-sidebar">
+            <div class="db-icon active">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="1" y="1" width="5" height="5" rx="1.5" fill="white"/>
+                <rect x="8" y="1" width="5" height="5" rx="1.5" fill="white" opacity=".5"/>
+                <rect x="1" y="8" width="5" height="5" rx="1.5" fill="white" opacity=".5"/>
+                <rect x="8" y="8" width="5" height="5" rx="1.5" fill="white" opacity=".5"/>
+              </svg>
+            </div>
+            <div class="db-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M7 1l5 3v5.5C12 12 10 13.5 7 14 4 13.5 2 12 2 9.5V4l5-3z" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="db-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 4h10M2 7h10M2 10h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="db-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="5" r="3" stroke="white" stroke-width="1.5"/>
+                <path d="M1 13c0-2.761 2.686-5 6-5s6 2.239 6 5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="db-main">
+            <div class="db-title">
+              {lang === 'uz' ? 'Bosh panel' : lang === 'ru' ? 'Главная' : 'Dashboard'}
+            </div>
+            <div class="db-stats">
+              {[
+                [lang === 'uz' ? 'Daromad' : lang === 'ru' ? 'Доход' : 'Revenue', '2.4M', '+12%'],
+                [lang === 'uz' ? 'Buyurtmalar' : lang === 'ru' ? 'Заказы' : 'Orders', '284', '+8%'],
+                [lang === 'uz' ? 'Mijozlar' : lang === 'ru' ? 'Клиенты' : 'Customers', '1,240', '+5%'],
+              ].map(([label, val, up]) => (
+                <div class="db-stat">
+                  <div class="db-stat-label">{label}</div>
+                  <div class="db-stat-val">{val}</div>
+                  <div class="db-stat-up">↑ {up}</div>
+                </div>
+              ))}
+            </div>
+            <div class="db-chart-area">
+              <div class="db-chart-label">
+                {lang === 'uz' ? 'Haftalik sotuv' : lang === 'ru' ? 'Продажи за неделю' : 'Weekly sales'}
+              </div>
+              <div class="db-bars">
+                {[55,72,45,88,65,90,78,85,62,95,70,82].map((h, i) => (
+                  <div class="db-bar" style={`height:${h*0.4}%;background:${i%2===0?'#a5c113':'#c4dc4e'};opacity:${0.7+(i%3)*0.1}`}></div>
+                ))}
+              </div>
+            </div>
+            <div class="db-orders">
+              <div class="db-chart-label" style="margin-bottom:6px">
+                {lang === 'uz' ? "So'nggi buyurtmalar" : lang === 'ru' ? 'Последние заказы' : 'Recent orders'}
+              </div>
+              {[
+                { init:'AT', color:'#a5c113', name: lang==='uz'?'Azizbek T.':lang==='ru'?'Азизбек Т.':'Azizbek T.', amt:'85,000', status: lang==='uz'?'Yangi':lang==='ru'?'Новый':'New', sc:'#f4facc', tc:'#8aaa00' },
+                { init:'SF', color:'#8aaa00', name: lang==='uz'?'Sarvinoz F.':lang==='ru'?'Сарвиноз Ф.':'Sarvinoz F.', amt:'124,000', status: lang==='uz'?'Yetkazilmoqda':lang==='ru'?'Доставляется':'Delivering', sc:'#fef3c7', tc:'#d97706' },
+                { init:'MR', color:'#d97706', name: lang==='uz'?'Murod R.':lang==='ru'?'Мурод Р.':'Murod R.', amt:'47,500', status: lang==='uz'?'Bajarildi':lang==='ru'?'Выполнен':'Done', sc:'#f4facc', tc:'#a5c113' },
+              ].map((o) => (
+                <div class="db-order-row">
+                  <div class="db-order-av" style={`background:${o.color};color:#fff`}>{o.init}</div>
+                  <div class="db-order-name">{o.name}</div>
+                  <div class="db-order-amt">{o.amt}</div>
+                  <div class="db-order-badge" style={`background:${o.sc};color:${o.tc}`}>{o.status}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="phone-float">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-tg-header">
+              <div class="phone-tg-av">E</div>
+              <div>
+                <div class="phone-tg-name">Ezzyshop Bot</div>
+                <div class="phone-tg-status">{lang==='uz'?'onlayn':lang==='ru'?'онлайн':'online'}</div>
+              </div>
+            </div>
+            <div class="phone-msgs">
+              <div class="msg bot">
+                {lang==='uz'?"Salom! Ezzyshop botiga xush kelibsiz 👋":lang==='ru'?"Привет! Добро пожаловать 👋":"Hello! Welcome to Ezzyshop 👋"}
+                <div class="msg-time">14:32</div>
+              </div>
+              <div class="product-card">
+                <div class="product-img">🛍</div>
+                <div class="product-name">{lang==='uz'?'Margilan gilamı':lang==='ru'?'Ковёр Маргилан':'Margilan Rug'}</div>
+                <div class="product-price">89,000 so'm</div>
+                <div class="product-btn">{lang==='uz'?'Buyurtma berish':lang==='ru'?'Заказать':'Order now'}</div>
+              </div>
+              <div class="msg user">
+                {lang==='uz'?'1 dona buyurtma qilaman':lang==='ru'?"Заказываю 1 штуку":"I'll order 1 please"}
+                <div class="msg-time">14:33</div>
+              </div>
+              <div class="msg bot">
+                {lang==='uz'?"✅ Qabul qilindi!\n📍 ~30 daqiqa":lang==='ru'?"✅ Принято!\n📍 ~30 минут":"✅ Confirmed!\n📍 ~30 min"}
+                <div class="msg-time">14:33</div>
+              </div>
+            </div>
+            <div class="phone-kbd">
+              <div class="phone-kbd-bar"></div>
+              <div class="phone-kbd-send">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M1 6l9-5-4 5 4 5-9-5z" fill="white"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
