@@ -1,0 +1,22 @@
+---
+import { T, type Lang } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = T[lang];
+---
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    {[
+      [t.stat1_n, t.stat1_d],
+      [t.stat2_n, t.stat2_d],
+      [t.stat3_n, t.stat3_d],
+      [t.stat4_n, t.stat4_d],
+    ].map(([n, d]) => (
+      <div class="stat-item">
+        <div class="stat-num">{n}</div>
+        <div class="stat-desc">{d}</div>
+      </div>
+    ))}
+  </div>
+</div>
