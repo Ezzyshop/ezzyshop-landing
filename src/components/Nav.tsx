@@ -36,14 +36,14 @@ export default function Nav({ lang: initialLang }: Props) {
                 style={{ height: "34px", maxWidth: "200px", width: "auto" }}
                 width={200}
                 height={34}
-                className="hidden md:block"
+                className="hidden! md:block!"
               />
               <img
                 src="/favicon.png"
                 alt="Ezzyshop"
                 width={42}
                 height={42}
-                className="block md:hidden"
+                className="block! md:hidden!"
               />
             </>
           ) : (
@@ -54,14 +54,14 @@ export default function Nav({ lang: initialLang }: Props) {
                 style={{ height: "34px", maxWidth: "200px", width: "auto" }}
                 width={200}
                 height={34}
-                className="hidden md:block"
+                className="hidden! md:block!"
               />
               <img
                 src="/favicon.png"
                 alt="Ezzyshop"
                 width={42}
                 height={42}
-                className="block md:hidden"
+                className="block! md:hidden!"
               />
             </>
           )}
