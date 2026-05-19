@@ -58,9 +58,9 @@ export const T = {
     price_title: "Biznesingizga mos tarif",
     price_sub: "30 kunlik bepul sinab ko'rish. Kredit karta kerak emas.",
     plans: [
-      { name: "Starter",    price: "149,000", per: "/ oy",  featured: false, feats: ["1 do'kon","Telegram bot","500 mahsulot","Cheksiz buyurtmalar","Asosiy analitika","Email qo'llab-quvvatlash"] },
+      { name: "Starter",    price: "199,000", per: "/ oy",  featured: false, feats: ["1 do'kon","Telegram bot","500 mahsulot","Cheksiz buyurtmalar","Asosiy analitika","Email qo'llab-quvvatlash"] },
       { name: "Business",   price: "349,000", per: "/ oy",  featured: true,  feats: ["3 do'konga qadar","Telegram + web","Cheksiz mahsulotlar","Cheksiz buyurtmalar","Kengaytirilgan analitika","Xodimlar boshqaruvi","Ustuvor qo'llab-quvvatlash"] },
-      { name: "Enterprise", price: "Murojaat", per: "",     featured: false, feats: ["Cheksiz do'konlar","Maxsus integratsiya","Dedicated server","API kirish","Shaxsiy menejer","SLA kafolati"] },
+      { name: "Enterprise", price: "599,000", per: "/ oy",  featured: false, feats: ["Cheksiz do'konlar","Maxsus integratsiya","Dedicated server","API kirish","Shaxsiy menejer","SLA kafolati"] },
     ],
     cta_title: "Bugun onlayn biznesingizni boshlang",
     cta_sub: "30 kunlik bepul. Istalgan vaqt bekor qilish mumkin.",
